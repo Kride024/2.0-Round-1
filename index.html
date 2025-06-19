@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmetic Products and Pollution</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Cosmetic Pollution Awareness</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#skin">Skin Effects</a></li>
+          <li><a href="#eco">Eco Impact</a></li>
+          <li><a href="#alternatives">Alternatives</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section class="hero" id="home" background="url('https://i.pinimg.com/736x/15/ac/4c/15ac4cc77b5f1ab2ac6d8407556b6eea.jpg')">
+    <div class="container">
+      <h2>Understand the impact of cosmetics on our skin and the environment</h2>
+      <p>Explore sustainable options and learn how cosmetic products contribute to pollution.</p>
+    </div>
+  </section>
+
+  <!-- Skin Effects -->
+  <section class="container" id="skin">
+    <h2>Harmful Effects of Cosmetics on Skin</h2>
+    <ul>
+      <li><strong>Allergic Reactions:</strong> Caused by parabens, sulfates, and synthetic fragrances.</li>
+      <li><strong>Acne Breakouts:</strong> Due to comedogenic ingredients clogging pores.</li>
+      <li><strong>Premature Aging:</strong> Triggered by harsh chemicals stripping skin barrier.</li>
+      <li><strong>Hyperpigmentation:</strong> Resulting from prolonged exposure to toxic additives.</li>
+    </ul>
+    <h3>How to Protect Your Skin</h3>
+    <p>
+      Use products labeled as hypoallergenic and non-comedogenic. Avoid ingredients like alcohol, formaldehyde, and synthetic colors. Opt for organic, plant-based skincare wherever possible.
+    </p>
+  </section>
+
+  <!-- Eco Impact -->
+  <section class="container" id="eco">
+    <h2>Environmental Impact of Cosmetic Products</h2>
+    <p>Cosmetic manufacturing and disposal significantly affect our ecosystem. Harmful chemicals and microplastics from beauty products often end up in water bodies, harming marine life and entering our food chain.</p>
+    <ul>
+      <li><strong>Water Pollution:</strong> Due to rinsing off synthetic shampoos, conditioners, and face washes.</li>
+      <li><strong>Plastic Waste:</strong> Packaging waste contributes to land and ocean pollution.</li>
+      <li><strong>Air Emissions:</strong> Aerosol sprays release volatile organic compounds (VOCs).</li>
+    </ul>
+  </section>
+
+  <!-- Alternatives -->
+  <section class="container" id="alternatives">
+    <h2>Natural and Safer Alternatives</h2>
+    <p>Switching to eco-friendly and skin-friendly cosmetic alternatives helps reduce pollution and health hazards.</p>
+    <ul>
+      <li>Use certified organic and herbal brands.</li>
+      <li>Avoid microbeads and synthetic fragrances.</li>
+      <li>Choose recyclable or refillable packaging.</li>
+      <li>Support cruelty-free and sustainable beauty companies.</li>
+    </ul>
+  </section>
+
+  <!-- Carbon Emission Calculator -->
+  <section class="calculator-section container">
+    <h2>Carbon Emission Calculator</h2>
+    <form id="emission-form">
+      <input type="text" id="product-name" placeholder="Enter cosmetic product name" required />
+      <button type="submit">Calculate</button>
+    </form>
+    <p id="emission-result"></p>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section container">
+    <h2>Nearby Herbal Shops & Underserved Communities</h2>
+    <div id="map"></div>
+  </section>
+
+  <!-- Contact -->
+  <section class="container" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Cosmetic Awareness | Promoting Sustainability and Health</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("emission-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const product = document.getElementById("product-name").value.trim();
+      if (!product) return;
+      const emissions = Math.floor(Math.random() * 10 + 1);
+      document.getElementById("emission-result").textContent = `${product} emits approximately ${emissions} kg CO₂ during its production.`;
+    });
+
+    const map = L.map('map').setView([28.6139, 77.2090], 12);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+    L.marker([28.6149, 77.2095]).addTo(map).bindPopup("Herbal Beauty Shop 1");
+    L.marker([28.6109, 77.2010]).addTo(map).bindPopup("Herbal Beauty Shop 2");
+    L.circle([28.6200, 77.2000], {
+      color: '#f16e84',
+      fillColor: '#f16e84',
+      fillOpacity: 0.5,
+      radius: 500
+    }).addTo(map).bindPopup("Underserved Area");
+  </script>
+</body>
+</html>
+
