@@ -1,10 +1,10 @@
 :root {
-  --theme-color: #f16e84;
+  --theme-color: #4e785a;
   --light-bg: #fff0f5;
   --text-color: #333;
-  --header-bg: #f16e84;
+  --header-bg: #4e785a;
   --hero-bg: linear-gradient(to right, #ffe6ea, #f16e84);
-  --footer-bg: #f16e84;
+  --footer-bg: #4e785a;
 }
 
 body {
@@ -19,7 +19,7 @@ body {
 .site-header {
   background-color: var(--header-bg);
   color: white;
-  padding: 1rem 0;
+  padding: 0.1rem 0;
 }
 .site-header .container {
   display: flex;
@@ -50,20 +50,20 @@ body {
 /* Hero Section */
 
 .hero {
-  /* background-image: url('https://i.pinimg.com/736x/15/ac/4c/15ac4cc77b5f1ab2ac6d8407556b6eea.jpg'); */
+  /* background-image: url(''); */
   background-size: cover;
   background-position: center;
   width: 100%;
   height: 400px;
   object-fit: cover;
-  color: #fff;
+  color: #0e0e0e;
   text-align: center;
   padding: 3rem 1rem;
 }
 
 
 .hero h2 {
-  margin-top: 15rem;
+  margin-top: 5rem;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
