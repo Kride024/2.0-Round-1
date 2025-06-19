@@ -48,13 +48,22 @@ body {
 }
 
 /* Hero Section */
+
 .hero {
-  background: var(--hero-bg);
-  color: #222;
+  /* background-image: url('https://i.pinimg.com/736x/15/ac/4c/15ac4cc77b5f1ab2ac6d8407556b6eea.jpg'); */
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  color: #fff;
   text-align: center;
   padding: 3rem 1rem;
 }
+
+
 .hero h2 {
+  margin-top: 15rem;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
